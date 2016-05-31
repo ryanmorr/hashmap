@@ -55,4 +55,33 @@ describe('hashmap', () => {
         const map = hashmap({foo: 1, bar: 2}, {baz: 3, qux: 4}, {foo: 10});
         expect(map).to.eql({foo: 10, bar: 2, baz: 3, qux: 4});
     });
+
+    it('should be iterable', () => {
+        const map = hashmap({foo: 1, bar: 2});
+        expect(Symbol.iterator in map).to.equal(true);
+        const descriptor = Object.getOwnPropertyDescriptor(map, Symbol.iterator);
+        expect(descriptor.configurable).to.equal(false);
+        expect(descriptor.enumerable).to.equal(false);
+        expect(descriptor.writable).to.equal(false);
+    });
+
+    it('should support for...of loops', () => {
+        const map = hashmap({foo: 1, bar: 2});
+        let i = 0;
+        const keys = Object.keys(map);
+        for (const [key, value] of map) {
+            expect(key).to.equal(keys[i]);
+            expect(value).to.equal(map[keys[i++]]);
+        }
+    });
+
+    it('should support iterator syntax', () => {
+        const map = hashmap({foo: 1, bar: 2});
+        let i = 0;
+        const entries = Object.entries(map);
+        const iter = map[Symbol.iterator]();
+        expect(iter.next().value).to.eql(entries[i++]);
+        expect(iter.next().value).to.eql(entries[i++]);
+        expect(iter.next().done).to.eql(true);
+    });
 });
