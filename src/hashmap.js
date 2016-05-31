@@ -9,7 +9,7 @@ export default function hashmap(...props) {
     // Create an object with no prototype to avoid
     // name collisions with potential properties
     const map = Object.create(null, {
-        // Add support for the iteration protocol
+        // Add support for the iterator protocol
         // via the `@@iterator` method
         [Symbol.iterator]: {
             enumerable: false,
