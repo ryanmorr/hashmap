@@ -45,4 +45,9 @@ describe('hashmap', () => {
         expect(Object.getPrototypeOf(map)).to.equal(null);
         expect(props.every(key => key in map)).to.equal(false);
     });
+
+    it('should allow object literal as an argument to populate the map with its properties', () => {
+        const map = hashmap({foo: 1, bar: 2});
+        expect(map).to.eql({foo: 1, bar: 2});
+    });
 });
