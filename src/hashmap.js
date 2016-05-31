@@ -1,14 +1,14 @@
 /**
  * Create a basic hashmap
  *
- * @param {Object} props
+ * @param {...Object} props
  * @return {Object}
  * @api public
  */
-export default function hashmap(props = null) {
+export default function hashmap(...props) {
     const map = Object.create(null);
-    if (props) {
-        Object.assign(map, props);
+    if (props.length) {
+        Object.assign(map, ...props);
     }
     return map;
 }

@@ -50,4 +50,9 @@ describe('hashmap', () => {
         const map = hashmap({foo: 1, bar: 2});
         expect(map).to.eql({foo: 1, bar: 2});
     });
+
+    it('should allow multiple object literals as parameters (right overwrites left)', () => {
+        const map = hashmap({foo: 1, bar: 2}, {baz: 3, qux: 4}, {foo: 10});
+        expect(map).to.eql({foo: 10, bar: 2, baz: 3, qux: 4});
+    });
 });
