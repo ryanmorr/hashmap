@@ -6,7 +6,11 @@
  * @api public
  */
 export default function hashmap(...props) {
+    // Create an object with no prototype to avoid
+    // name collisions with potential properties
     const map = Object.create(null, {
+        // Add support for the iteration protocol
+        // via the `@@iterator` method
         [Symbol.iterator]: {
             enumerable: false,
             writable: false,
@@ -22,6 +26,8 @@ export default function hashmap(...props) {
             })
         }
     });
+    // If any object parameters are provided, merge
+    // their properties with the map
     if (props.length) {
         Object.assign(map, ...props);
     }
