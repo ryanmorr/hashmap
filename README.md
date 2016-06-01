@@ -1,4 +1,4 @@
-# hashmap
+# hashmap [![Build Status](https://travis-ci.org/ryanmorr/hashmap.svg)](https://travis-ci.org/ryanmorr/hashmap)
 
 > A superior alternative to object literals for basic hash maps
 
