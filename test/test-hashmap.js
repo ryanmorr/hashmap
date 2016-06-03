@@ -32,20 +32,12 @@ describe('hashmap', () => {
 
     it('should not have a prototype or inherited properties/methods', () => {
         const map = hashmap();
-        const props = [
-            'isPrototypeOf',
-            'hasOwnProperty',
-            'toLocaleString',
-            'propertyIsEnumerable',
-            'toString',
-            'valueOf',
-            'constructor'
-        ];
-
         expect(Object.getPrototypeOf(map)).to.equal(null);
-        props.forEach((key) => {
-            expect(key in map).to.equal(false);
-        });
+        let hasProps = false;
+        for (const key in map) {
+            hasProps = true;
+        }
+        expect(hasProps).to.equal(false);
     });
 
     it('should allow object literal as an argument to populate the map with its properties', () => {
