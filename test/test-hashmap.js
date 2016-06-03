@@ -34,9 +34,11 @@ describe('hashmap', () => {
         const map = hashmap();
         expect(Object.getPrototypeOf(map)).to.equal(null);
         let hasProps = false;
+        /* eslint-disable no-unused-vars */
         for (const key in map) {
             hasProps = true;
         }
+        /* eslint-enable no-unused-vars */
         expect(hasProps).to.equal(false);
     });
 
