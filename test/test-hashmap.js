@@ -40,6 +40,9 @@ describe('hashmap', () => {
         }
         /* eslint-enable no-unused-vars */
         expect(hasProps).to.equal(false);
+        Object.getOwnPropertyNames(Object.prototype).forEach((prop) => {
+            expect(prop in map).to.equal(false);
+        });
     });
 
     it('should allow object literal as an argument to populate the map with its properties', () => {
