@@ -1,4 +1,6 @@
-# hashmap [![Build Status](https://travis-ci.org/ryanmorr/hashmap.svg)](https://travis-ci.org/ryanmorr/hashmap)
+# hashmap
+
+[![GitHub version](https://badge.fury.io/gh/ryanmorr%2Fhashmap.svg)](https://badge.fury.io/gh/ryanmorr%2Fhashmap) [![Build Status](https://travis-ci.org/ryanmorr/hashmap.svg)](https://travis-ci.org/ryanmorr/hashmap) ![Size](https://badge-size.herokuapp.com/ryanmorr/hashmap/master/src/hashmap.js.svg?color=blue&label=file%20size)
 
 > A superior alternative to object literals for basic hash maps
 
