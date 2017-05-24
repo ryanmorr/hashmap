@@ -1,6 +1,10 @@
 # hashmap
 
-[![GitHub version](https://badge.fury.io/gh/ryanmorr%2Fhashmap.svg)](https://badge.fury.io/gh/ryanmorr%2Fhashmap) [![Build Status](https://travis-ci.org/ryanmorr/hashmap.svg)](https://travis-ci.org/ryanmorr/hashmap) ![Size](https://badge-size.herokuapp.com/ryanmorr/hashmap/master/src/hashmap.js.svg?color=blue&label=file%20size)
+[![Version Badge][version-image]][project-url]
+[![Build Status][build-image]][build-url]
+[![Dependencies][dependencies-image]][project-url]
+[![License][license-image]][license-url]
+[![File Size][file-size-image]][project-url]
 
 > A superior alternative to object literals for basic hash maps
 
@@ -73,3 +77,12 @@ gulp test
 ## License
 
 This project is dedicated to the public domain as described by the [Unlicense](http://unlicense.org/).
+
+[project-url]: https://github.com/ryanmorr/hashmap
+[version-image]: https://badge.fury.io/gh/ryanmorr%2Fhashmap.svg
+[build-url]: https://travis-ci.org/ryanmorr/hashmap
+[build-image]: https://travis-ci.org/ryanmorr/hashmap.svg
+[dependencies-image]: https://david-dm.org/ryanmorr/hashmap.svg
+[license-image]: https://img.shields.io/badge/license-Unlicense-blue.svg
+[license-url]: UNLICENSE
+[file-size-image]: https://badge-size.herokuapp.com/ryanmorr/hashmap/master/dist/hashmap.min.js.svg?color=blue&label=file%20size
