@@ -12,7 +12,7 @@ import del from 'del';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 
-const banner = '/*! ${pkg.name} v${pkg.version} | ${pkg.homepage} */\n';
+const banner = `/*! ${pkg.name} v${pkg.version} | ${pkg.homepage} */\n`;
 
 const config = {
     files: './src/**/*.js',
@@ -27,8 +27,8 @@ function unitTests() {
         .pipe(mocha({
             ui: 'bdd',
             reporter: 'spec',
-            compilers: [
-                'babel-core/register'
+            require: [
+                '@babel/register'
             ]
         }));
 }
