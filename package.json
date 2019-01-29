@@ -1,20 +1,20 @@
 {
-  "name": "hashmap",
+  "name": "@ryanmorr/hashmap",
   "description": "A superior alternative to object literals for basic hash maps",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "Unlicense",
   "homepage": "https://github.com/ryanmorr/hashmap",
-  "author": {
-    "name": "Ryan Morr",
-    "email": "rm.morr@gmail.com",
-    "url": "http://ryanmorr.com"
-  },
+  "main": "dist/hashmap.min.js",
+  "author": "Ryan Morr",
   "repository": {
     "type": "git",
     "url": "git://github.com/ryanmorr/hashmap.git"
   },
   "bugs": {
     "url": "https://github.com/ryanmorr/hashmap/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",
