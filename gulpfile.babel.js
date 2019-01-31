@@ -15,6 +15,7 @@ import buffer from 'vinyl-buffer';
 const banner = `/*! ${pkg.name} v${pkg.version} | ${pkg.homepage} */\n`;
 
 const config = {
+    name: 'hashmap',
     files: './src/**/*.js',
     entryFile: './src/hashmap.js',
     outputFile: 'hashmap.js',
@@ -38,7 +39,7 @@ gulp.task('clean', () => {
 });
 
 gulp.task('build', ['clean'], () => {
-    return browserify(config.entryFile, {debug: true, standalone: pkg.name})
+    return browserify(config.entryFile, {debug: true, standalone: config.name})
         .transform(babelify)
         .bundle()
         .pipe(source(config.outputFile))
