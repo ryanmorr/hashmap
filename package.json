@@ -1,7 +1,7 @@
 {
   "name": "@ryanmorr/hashmap",
   "description": "A superior alternative to object literals for basic hash maps",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "Unlicense",
   "homepage": "https://github.com/ryanmorr/hashmap",
   "main": "dist/hashmap.min.js",
