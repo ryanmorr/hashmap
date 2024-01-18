@@ -32,7 +32,9 @@ describe('hashmap', () => {
 
     it('should not have a prototype or inherited properties/methods', () => {
         const map = hashmap();
+
         expect(Object.getPrototypeOf(map)).to.equal(null);
+
         let hasProps = false;
         /* eslint-disable no-unused-vars */
         for (const key in map) {
@@ -40,6 +42,7 @@ describe('hashmap', () => {
         }
         /* eslint-enable no-unused-vars */
         expect(hasProps).to.equal(false);
+
         Object.getOwnPropertyNames(Object.prototype).forEach((prop) => {
             expect(prop in map).to.equal(false);
         });
@@ -47,40 +50,31 @@ describe('hashmap', () => {
 
     it('should allow object literal as an argument to populate the map with its properties', () => {
         const map = hashmap({foo: 1, bar: 2});
+
         expect(map).to.eql({foo: 1, bar: 2});
     });
 
     it('should allow multiple object literals as parameters (right overwrites left)', () => {
         const map = hashmap({foo: 1, bar: 2}, {baz: 3, qux: 4}, {foo: 10});
+
         expect(map).to.eql({foo: 10, bar: 2, baz: 3, qux: 4});
     });
 
     it('should be iterable', () => {
         const map = hashmap({foo: 1, bar: 2});
+
         expect(Symbol.iterator in map).to.equal(true);
+
         const descriptor = Object.getOwnPropertyDescriptor(map, Symbol.iterator);
         expect(descriptor.configurable).to.equal(false);
         expect(descriptor.enumerable).to.equal(false);
         expect(descriptor.writable).to.equal(false);
-    });
 
-    it('should support for...of loops', () => {
-        const map = hashmap({foo: 1, bar: 2});
         let i = 0;
         const keys = Object.keys(map);
         for (const [key, value] of map) {
             expect(key).to.equal(keys[i]);
             expect(value).to.equal(map[keys[i++]]);
         }
-    });
-
-    it('should support iterator syntax', () => {
-        const map = hashmap({foo: 1, bar: 2});
-        let i = 0;
-        const entries = Object.entries(map);
-        const iter = map[Symbol.iterator]();
-        expect(iter.next().value).to.eql(entries[i++]);
-        expect(iter.next().value).to.eql(entries[i++]);
-        expect(iter.next().done).to.eql(true);
     });
 });

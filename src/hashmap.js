@@ -1,10 +1,3 @@
-/**
- * Create a basic iterable hash map
- *
- * @param {...Object} props
- * @return {Object}
- * @api public
- */
 export default function hashmap(...props) {
     const map = Object.create(null, {
         [Symbol.iterator]: {
