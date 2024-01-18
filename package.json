@@ -3,40 +3,48 @@
   "description": "A superior alternative to object literals for basic hash maps",
   "version": "0.1.2",
   "license": "Unlicense",
-  "homepage": "https://github.com/ryanmorr/hashmap",
-  "main": "dist/hashmap.min.js",
   "author": "Ryan Morr",
+  "homepage": "https://github.com/ryanmorr/hashmap",
+  "bugs": "https://github.com/ryanmorr/hashmap/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ryanmorr/hashmap.git"
+    "url": "git+https://github.com/ryanmorr/hashmap.git"
   },
-  "bugs": {
-    "url": "https://github.com/ryanmorr/hashmap/issues"
+  "keywords": [
+    "javascript",
+    "hashmap",
+    "map",
+    "data"
+  ],
+  "type": "module",
+  "main": "dist/cjs/hashmap.js",
+  "module": "dist/esm/hashmap.js",
+  "browser": "dist/umd/hashmap.js",
+  "exports": {
+    ".": {
+      "browser": "./dist/umd/hashmap.js",
+      "import": "./dist/esm/hashmap.js",
+      "require": "./dist/cjs/hashmap.js"
+    }
   },
-  "publishConfig": {
-    "access": "public"
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint src/** test/specs/**",
+    "test": "mocha test/specs/**/*.js --reporter spec",
+    "build": "rollup -c"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.1",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "babel-eslint": "^9.0.0",
-    "babel-plugin-add-module-exports": "^1.0.0",
-    "babelify": "^10.0.0",
-    "browserify": "^16.2.2",
-    "chai": "^4.1.2",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^5.0.0",
-    "gulp-header": "^2.0.5",
-    "gulp-mocha": "^6.0.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.1",
-    "mocha": "^5.2.0",
-    "sinon": "^6.2.0",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0",
-    "watchify": "^3.11.0"
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
+    "chai": "^4.3.7",
+    "eslint": "^8.33.0",
+    "mocha": "^10.2.0",
+    "rollup": "^3.14.0",
+    "rollup-plugin-generate-package-json": "^3.2.0",
+    "sinon": "^15.0.1",
+    "terser": "^5.16.3"
   }
 }
