@@ -1,14 +1,14 @@
 # hashmap
 
 [![Version Badge][version-image]][project-url]
-[![Build Status][build-image]][build-url]
 [![License][license-image]][license-url]
+[![Build Status][build-image]][build-url]
 
 > A superior alternative to object literals for basic hash maps
 
 ## Install
 
-Download the [development](http://github.com/ryanmorr/hashmap/raw/master/dist/hashmap.js) or [minified](http://github.com/ryanmorr/hashmap/raw/master/dist/hashmap.min.js) version, or install via NPM:
+Download the [CJS](https://github.com/ryanmorr/hashmap/raw/master/dist/cjs/hashmap.js), [ESM](https://github.com/ryanmorr/hashmap/raw/master/dist/esm/hashmap.js), [UMD](https://github.com/ryanmorr/hashmap/raw/master/dist/umd/hashmap.js) versions or install via NPM:
 
 ``` sh
 npm install @ryanmorr/hashmap
@@ -19,6 +19,8 @@ npm install @ryanmorr/hashmap
 Use just like an object literal:
 
 ``` javascript
+import hashmap from '@ryanmorr/hashmap';
+
 const map = hashmap();
 
 map.foo = 1;
@@ -64,8 +66,8 @@ for (const [key, value] of map) {
 This project is dedicated to the public domain as described by the [Unlicense](http://unlicense.org/).
 
 [project-url]: https://github.com/ryanmorr/hashmap
-[version-image]: https://badge.fury.io/gh/ryanmorr%2Fhashmap.svg
-[build-url]: https://travis-ci.org/ryanmorr/hashmap
-[build-image]: https://travis-ci.org/ryanmorr/hashmap.svg
-[license-image]: https://img.shields.io/badge/license-Unlicense-blue.svg
+[version-image]: https://img.shields.io/github/package-json/v/ryanmorr/hashmap?color=blue&style=flat-square
+[build-url]: https://github.com/ryanmorr/hashmap/actions
+[build-image]: https://img.shields.io/github/actions/workflow/status/ryanmorr/hashmap/node.js.yml?style=flat-square
+[license-image]: https://img.shields.io/github/license/ryanmorr/hashmap?color=blue&style=flat-square
 [license-url]: UNLICENSE
