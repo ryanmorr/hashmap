@@ -1,7 +1,7 @@
 {
   "name": "@ryanmorr/hashmap",
   "description": "A superior alternative to object literals for basic hash maps",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "Unlicense",
   "author": "Ryan Morr",
   "homepage": "https://github.com/ryanmorr/hashmap",
